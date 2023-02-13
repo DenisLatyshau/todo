@@ -19,7 +19,7 @@ export default class App extends Component {
       this.createTodoItem('Have a lunch')
     ],
     term: '',
-    filter: 'active'  //'all', 'done'
+    filter: 'all'  //'all', 'done'
   } 
 
   createTodoItem(label) {
@@ -116,7 +116,7 @@ export default class App extends Component {
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
           <SearchPanel onSearchChange={this.onSearchChange} />
-          <ItemStatusFilter />
+          <ItemStatusFilter  filter={filter}/>
         </div>
 
         <TodoList 
