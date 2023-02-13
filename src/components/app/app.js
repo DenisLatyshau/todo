@@ -81,6 +81,10 @@ export default class App extends Component {
     this.setState({ term })
   }
 
+  onFilterChange = (filter) => {
+    this.setState({ filter })
+  }
+
   search(items, term) {
     return items.filter((item) => {
       if (term.length === 0) {
@@ -116,7 +120,9 @@ export default class App extends Component {
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
           <SearchPanel onSearchChange={this.onSearchChange} />
-          <ItemStatusFilter  filter={filter}/>
+          <ItemStatusFilter  
+              filter={filter}
+              onFilterChange={this.onFilterChange}/>
         </div>
 
         <TodoList 
